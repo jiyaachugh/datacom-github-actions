@@ -1,0 +1,25 @@
+
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  PROJECT_NAME: Datacom Cloud Simulation
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display project information
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "Project: $PROJECT_NAME"
+          echo "Workflow executed successfully."
